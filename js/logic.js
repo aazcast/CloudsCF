@@ -6,7 +6,7 @@
         //We define the defaults.
         var config = $.extend({
             'cantidad_nubes' : 1,
-            'tamanno' : [25, 50],
+            'tamanno' : [1, 100],
             'color' : '#fff', //Options default - other
             'speed' : 'normal' //Speed of the animation
         }, options);
@@ -23,11 +23,34 @@
 
        var clouds = $('.cloud');
 
-       // clouds.each(function () {
-       //    // setCloudSize($(this), options);
-       // });
+       setClasses(clouds, options);
+       setAnimation($elm, options);
 
        $('.cloud').css('background', options.color);
        $('body').append('<style>.cloud:after{background: ' + options.color + ';}.cloud:before{background: ' + options.color + ';}</style>');
     }
+
+    function setClasses (clouds, options) {
+      var minVal = options.tamanno[0],
+          maxVal = options.tamanno[1],
+          size = minVal + maxVal,
+          className = "";
+
+      if (size <= 25) {
+        className = "small";
+      } else if (size > 25 && size <= 50) {
+        className = "medium";
+      } else {
+        className = "big";
+      }
+
+      // console.log(className);
+
+      clouds.addClass(className);
+    }
+
+    function setAnimation (container, options) {
+      $(container).find(".clouds-container").attr("data-animation-speed", options.speed);
+    }
+
 }(jQuery))

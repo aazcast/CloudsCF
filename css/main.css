@@ -7,11 +7,6 @@ html,body {
 }
 .clouds-container {
   position: absolute;
-  animation: movecloud 13s ease-in-out infinite;
-  -webkit-animation: movecloud 13s ease-in-out infinite;
-  -moz-animation: movecloud 13s ease-in-out infinite;
-  -o-animation: movecloud 13s ease-in-out infinite;
-  -ms-animation: movecloud 13s ease-in-out infinite;
 }
 
 .cloud {
@@ -50,41 +45,65 @@ html,body {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-.medium {
+.cloud.medium {
     width: 236px;
     height: 107px;
 }
 
-.medium:before {
+.cloud.medium:before {
   width: 107px;
   height: 113px;
   top: -37px;
   right: 33px;
 }
 
-.medium:after {
+.cloud.medium:after {
   width: 100px;
   height: 100px;
   top: -50px;
   left: 36px;
 }
-.small {
+.cloud.small {
   width: 178px;
   height: 84px;
 }
 
-.small:before {
+.cloud.small:before {
   width: 98px;
   height: 96px;
   top: -42px;
   right: 26px;
 }
 
-.small:after {
+.cloud.small:after {
   width: 60px;
   height: 60px;
   top: -20px;
   left: 18px;
+}
+
+.clouds-container[data-animation-speed="fast"] {
+  animation: movecloud 8s ease-in-out infinite;
+  -webkit-animation: movecloud 8s ease-in-out infinite;
+  -moz-animation: movecloud 8s ease-in-out infinite;
+  -o-animation: movecloud 8s ease-in-out infinite;
+  -ms-animation: movecloud 8s ease-in-out infinite;
+}
+
+.clouds-container[data-animation-speed="normal"] {
+  animation: movecloud 13s ease-in-out infinite;
+  -webkit-animation: movecloud 13s ease-in-out infinite;
+  -moz-animation: movecloud 13s ease-in-out infinite;
+  -o-animation: movecloud 13s ease-in-out infinite;
+  -ms-animation: movecloud 13s ease-in-out infinite;
+}
+
+.clouds-container[data-animation-speed="slow"] {
+  animation: movecloud 33s ease-in-out infinite;
+  -webkit-animation: movecloud 33s ease-in-out infinite;
+  -moz-animation: movecloud 33s ease-in-out infinite;
+  -o-animation: movecloud 33s ease-in-out infinite;
+  -ms-animation: movecloud 33s ease-in-out infinite;
 }
 
 @keyframes movecloud {
