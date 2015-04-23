@@ -7,7 +7,7 @@
         var config = $.extend({
             'cantidad_nubes' : 1,
             'tamanno' : 'big', //Options big - small - medium
-            'color' : 'default', //Options default - other
+            'color' : '#fff', //Options default - other
             'speed' : 'normal' //Speed of the animation
         }, options);
 
@@ -25,6 +25,9 @@
        $.each(clouds, function(i,v){
         //???
        })
+
+       $('.cloud').css('background', options.color);
+       $('body').append('<style>.cloud:after{background: ' + options.color + ';}.cloud:before{background: ' + options.color + ';}</style>');
     }
 }(jQuery))
 
